@@ -1,0 +1,53 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    /* padding: 50px; */
+}
+.images{
+    height:80px;
+    width:80px;
+    position: relative;
+    left: 70px;
+    top: 10px;
+}
+.option{
+    padding-top: 30px;
+}
+.searchbox{
+    width: 400px;
+    height: 30px;
+    margin-top: 30px;
+    position: relative;
+}
+.profile{
+    padding-top: 30px;
+    padding-right: 20px;
+}
+.btns, .pro{
+    background-color: white;
+    border: none;
+    height: 30px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+.body{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: rgba(235, 235, 235, 0.342);
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 50px;
+    justify-content: center;
+}
+.card{
+     border:2px solid green;
+     padding:2px;
+     background-color:green;
+}
+.footer{
+    margin-top: 50px;
+    width: 1500px;
+    /* height: 800px; */
+}

@@ -1,10 +1,15 @@
-import React, { useState} from "react";
+import React, { useEffect, useState} from "react";
 import { createRoot } from "react-dom/client";
 
 
 function App(){
   const [color,setColor] = useState("black")
-  document.body.style.backgroundColor = color
+  console.log("outside run")
+  useEffect(()=>{
+     document.body.style.backgroundColor = color
+     console.log("inside run")
+  }, [color])
+ 
   return(
     <div className="appDiv">
       <h1>Background Changer</h1>

@@ -1,4 +1,5 @@
 import React , {useState, useEffect} from "react";
+import { useCallback } from "react";
 import {createRoot} from "react-dom/client"
 
 function Password(){
@@ -7,9 +8,9 @@ function Password(){
  const [numberChanged, setnumberChanged] = useState(false)
  const [charChanged, setcharChanged] = useState(false)
 
-
- function generatepassword(){
-    let str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+ //Optamized code and control to creatation of new memory useing useCallback
+ const generatepassword = useCallback(()=>{
+     let str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
     if(numberChanged){
         str += "0123456789"
@@ -23,12 +24,14 @@ function Password(){
         pass += str[Math.floor(Math.random()*str.length)]
     }
 
-    setPassword(pass)
- }
+      setPassword(pass)
+    },[length, numberChanged, charChanged])
+
+     //useEffect use for blocked unneccesory rendering
 
  useEffect(()=>{
     generatepassword()
- },[length, numberChanged, charChanged])
+ },[generatepassword])
 
  return(
     <>
